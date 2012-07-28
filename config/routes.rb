@@ -8,6 +8,9 @@ CaltrainTutor::Application.routes.draw do
   get '/signin' => 'sessions#new', :as => :signin
   get '/session' => 'users#show_session'
 
+  get '/me' => 'users#me'
+  get '/post' => 'lessons#new'
+
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

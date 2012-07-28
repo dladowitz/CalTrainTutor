@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>CaltrainTutor</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -11,6 +11,15 @@
 <h1>Caltrain Tutor</h1>
 
 <%= yield %>
+
+<%= link_to 'find a lesson', '/' %>
+
+<% if current_user %>
+  <%= link_to 'post a lesson', '/post' %>
+  <%= link_to 'my profile', '/me' %>
+<% else %>
+  <a href="/signin" data-ajax="false">login</a>
+<% end %>
 
 </body>
 </html>

@@ -1,7 +1,7 @@
 <h2>Showing lessons</h2>
 <% if @lessons.present? %>
   <% content_tag(:div, @lessons) do %>
-    <%= @lesson.to_yml %>
+    <%= @lesson.to_yaml %>
   <% end %>
 <% else %>
   No lessons yet.

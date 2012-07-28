@@ -27,4 +27,38 @@ class ApplicationController < ActionController::Base
   end
 
 
+  # reads params[:id] and finds a resource
+  # by default uses the class associate w/ the current controller
+  # can be passed a symbol class name as well, such as :user
+  # sets an instance variable after the model name, such as @user
+  # returns the found resource
+  def load_by_id(name = nil)
+    load_by(:id, name)
+  end
+
+  def load_by(key, symbol = nil)
+    name = symbol ? symbol.to_s.classify : controller_name.classify
+    klass = name.constantize
+
+    raise "unknown class: #{klass}" unless klass
+
+    # handle friendly URLs across the board
+    id = params[key].to_i
+
+    if id == 'new'
+      resource = klass.new
+    else
+      # todo: detect and handle IDs like "c-0"
+      resource = klass.find(id)
+    end
+
+    if resource
+      name = ('@' << name.underscore).to_sym
+      instance_variable_set(name, resource)
+      return resource
+    else
+      raise ApplicationController::ResourceNotFound, "#{klass} #{id} doesn't exist!"
+    end
+  end
+
 end
