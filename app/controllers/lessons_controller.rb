@@ -19,10 +19,15 @@ class LessonsController < ApplicationController
     redirect_to({action: :index}, :notice => 'lesson created')
   end
 
-  def buy
+  def new_purchase
     load_by_id
-    # todo: not buy own
-    current_user.purchase @lesson
+    #@payment = @lesson.payment
+  end
+
+  def complete_purchase
+    load_by_id
+    current_user.purchase @lesson, params[:payment]
+    redirect_to lesson_path(@lesson)
   end
 
   def edit

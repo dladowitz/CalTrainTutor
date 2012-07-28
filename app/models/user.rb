@@ -4,8 +4,8 @@ class User
 
 
   # created
-  has_many :lessons_offered, as: :creator
-  has_many :lessons_received, as: :student
+  has_many :lessons_offered, class_name: 'Lesson', inverse_of: :creator
+  has_many :lessons_received, class_name: 'Lesson', inverse_of: :student
 
   field :provider, type: String
   field :uid, type: String
@@ -58,11 +58,14 @@ class User
     end
   end
 
-  def purchase(lesson)
-    if lesson.student.present?
-      raise "Already has student: #{lesson.student.name}"
-    end
+  def purchase(lesson, payment_info)
+    #if lesson.student.present?
+    #  raise "Already has student: #{lesson.student.name}"
+    #end
 
+    # todo: validate ?
+
+    lesson.payment = payment_info
     lesson.student = self
     lesson.save
   end
