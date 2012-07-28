@@ -10,15 +10,50 @@
 
 <h1>Caltrain Tutor</h1>
 
-<%= yield %>
 
-<%= link_to 'find a lesson', '/' %>
+<% @page ||= 'none' %>
+<%= jqm_page @page do %>
+  page: <%= @page %>
+  <%= yield %>
 
-<% if current_user %>
-  <%= link_to 'post a lesson', '/post' %>
-  <%= link_to 'my profile', '/me' %>
-<% else %>
-  <a href="/signin" data-ajax="false">login</a>
+
+  <%= link_to 'find a lesson', '/' %>
+
+  <% if current_user %>
+    <%= link_to 'post a lesson', '/post' %>
+    <%= link_to 'my profile', '/me' %>
+  <% else %>
+    <a href="/signin" data-ajax="false">login</a>
+  <% end %>
+
+  <div data-role="footer" class="ui-bar nopadding nofade" data-position="fixed" data-theme="a" id="root_footer">
+    <%= nav_for @page do |n| %>
+      <%=
+          n.button('discover',
+                   {
+                       :href => '/',
+                       :data => {
+                           :icon => :search,
+                       }
+                   }) %>
+      <%=
+          n.button('post',
+                   {
+                       :href => '/post',
+                       :data => {
+                           :icon => :'arrow-u',
+                       }
+                   }) %>
+      <%=
+          n.button('profile',
+                   {
+                       :href => '/me',
+                       :data => {
+                           :icon => :gear,
+                       }
+                   }) %>
+    <% end %>
+  </div>
 <% end %>
 
 </body>
