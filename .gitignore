@@ -13,3 +13,13 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+
+.sass-cache/
+.idea/
+/*.tmpproj
+.DS_Store
+.rspec
+db/neo4j-*
+# keys/secrets held here:
+config/initializers/app_config.rb
