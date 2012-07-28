@@ -24,28 +24,79 @@
   background: url('/assets/bodybackground.png') !important;
 }
 
-
-.ui-link-inherit{
-  background: -moz-linear-gradient(top,  rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.6)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(255,255,255,0) 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  rgba(255,255,255,0.6) 0%,rgba(255,255,255,0) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+.ui-link-inherit {
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0.6)), color-stop(100%, rgba(255, 255, 255, 0))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#99ffffff', endColorstr = '#00ffffff', GradientType = 0); /* IE6-9 */
 }
-h1, h2{
+
+h1, h2 {
   display: block;
   background: url('/assets/subtitlebg.png') repeat-x !important;
   color: #707070;
   text-shadow: 1px 1px 1px white;
 }
 
-img.mug{
+img.mug {
   height: 100%;
 }
 
-table{
+table {
   color: #295796;
   font-weight: bold;
+  .time {
+    font-size: 17pt;
+  }
+  .info{
+    font-size: 13pt;
+  }
+  label {
+    color: #898989;
+  }
+  td{
+    padding: 3px;
+  }
+}
+
+[data-role=footer]{
+  a{
+    height: 72px;
+  }
+}
+[data-role=header]{
+  text-align: center;
+}
+
+#logo{
+  width: 151px;
+}
+
+.big_blue_button{
+  display: block;
+  border-radius: 3px;
+  background: #334d88; /* Old browsers */
+  background: -moz-linear-gradient(top,  #334d88 0%, #4365b2 51%, #334d88 52%, #28346a 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#334d88), color-stop(51%,#4365b2), color-stop(52%,#334d88), color-stop(100%,#28346a)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #334d88 0%,#4365b2 51%,#334d88 52%,#28346a 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #334d88 0%,#4365b2 51%,#334d88 52%,#28346a 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #334d88 0%,#4365b2 51%,#334d88 52%,#28346a 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #334d88 0%,#4365b2 51%,#334d88 52%,#28346a 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#334d88', endColorstr='#28346a',GradientType=0 ); /* IE6-9 */
+}
+
+
+.ui-icon-profile {
+	background-image: url("icons/profile.png") !important;
+}
+
+.ui-icon-postalesson {
+	background-image: url("icons/postalesson.png") !important;
+}
+
+.ui-icon-findalesson {
+	background-image: url("icons/findalesson.png") !important;
 }
