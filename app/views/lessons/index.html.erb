@@ -1,7 +1,9 @@
+<%= @page = :discovery %>
+
 <h2>Showing lessons</h2>
 <% if @lessons.present? %>
-  <% content_tag(:div, @lessons) do %>
-    <%= @lesson.to_yaml %>
+  <%= @lessons.each do |lesson| %>
+    <%= debug lesson %>
   <% end %>
 <% else %>
   No lessons yet.

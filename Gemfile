@@ -22,6 +22,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+#gem 'jqm_helper', '0.1.1', :path => 'vendor/gems/jqm_helper-0.1.1'
+gem 'jqm_helper', '0.1.1', :git => 'git@github.com:pehrlich/jqm_helper.git'
 
 
 # To use debugger

@@ -1,7 +1,7 @@
 class LessonsController < ApplicationController
 
   def index
-
+    @lessons = Lesson.all.to_a
   end
 
   def show
@@ -13,7 +13,8 @@ class LessonsController < ApplicationController
   end
 
   def create
-
+    @lesson = Lesson.create(params[:lesson])
+    redirect_to({action: :index}, :notice => 'lesson created')
   end
 
   def edit
