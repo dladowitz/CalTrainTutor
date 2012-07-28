@@ -16,12 +16,16 @@
       </label>
     </td>
     <td>
-      <%= @lesson.start %>
+      <span class="info">
+        <%= @lesson.start %>
+      </span>
     </td>
   </tr>
   <tr>
     <td rowspan="2">
-      <div><%= @lesson.time %></div>
+      <span class="time">
+        <%= @lesson.time %>
+      </span>
     </td>
     <td>
       <label>
@@ -29,7 +33,9 @@
       </label>
     </td>
     <td>
-      <%= @lesson.end %>
+      <span class="info">
+        <%= @lesson.end %>
+      </span>
     </td>
   </tr>
   <tr>
@@ -39,8 +45,8 @@
       </label>
     </td>
     <td>
-      <span class="time">
-        45min
+      <span class="info">
+        40min
       </span>
     </td>
   </tr>
@@ -56,7 +62,7 @@
     Purchased already by <%= @lesson.student.name %>
   <% end %>
 <% else %>
-  <a href="<%= buy_lesson_path(@lesson) %>">
+  <a  class="big_blue_button" data-role="button" href="<%= buy_lesson_path(@lesson) %>">
     Sign Up!
   </a>
 <% end %>

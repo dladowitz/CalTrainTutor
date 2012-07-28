@@ -15,6 +15,12 @@ class Lesson
 
   alias_method :name, :title
 
+  STATIONS = ['San Francisco', '22nd Street', 'Bayshore', 'South San Francisco', 'San Bruno', 'Millbrae',
+              'Broadway Weekend only', 'Burlingame', 'San Mateo', 'Hayward Park', 'Hillsdale', 'Belmont',
+              'San Carlos', 'Redwood City', 'Menlo Park', 'Palo Alto', 'California Ave.', 'San Antonio', 'Mountain View',
+              'Sunnyvale', 'Lawrence', 'Santa Clara', 'College Park', 'San Jose Diridon']
+
+
   def cardnumber
     self.payment[:cardnumber]
   end
@@ -30,7 +36,6 @@ class Lesson
   def cardexpirymonth
     self.payment[:cardexpirymonth]
   end
-
 
 
 end
