@@ -46,7 +46,7 @@
     </td>
     <td>
       <span class="info">
-        45min
+        40min
       </span>
     </td>
   </tr>
@@ -62,7 +62,7 @@
     Purchased already by <%= @lesson.student.name %>
   <% end %>
 <% else %>
-  <a  class="big_blue_button" href="<%= buy_lesson_path(@lesson) %>">
+  <a  class="big_blue_button" data-role="button" href="<%= buy_lesson_path(@lesson) %>">
     Sign Up!
   </a>
 <% end %>

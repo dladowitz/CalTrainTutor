@@ -75,17 +75,19 @@ table {
   width: 151px;
 }
 
-.big_blue_button{
+.big_blue_button {
   display: block;
   border-radius: 3px;
-  background: #334d88; /* Old browsers */
-  background: -moz-linear-gradient(top,  #334d88 0%, #4365b2 51%, #334d88 52%, #28346a 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#334d88), color-stop(51%,#4365b2), color-stop(52%,#334d88), color-stop(100%,#28346a)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #334d88 0%,#4365b2 51%,#334d88 52%,#28346a 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #334d88 0%,#4365b2 51%,#334d88 52%,#28346a 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #334d88 0%,#4365b2 51%,#334d88 52%,#28346a 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #334d88 0%,#4365b2 51%,#334d88 52%,#28346a 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#334d88', endColorstr='#28346a',GradientType=0 ); /* IE6-9 */
+  background: #334d88 !important; /* Old browsers */
+  background: -moz-linear-gradient(top,  #334d88 0%, #4365b2 51%, #334d88 52%, #28346a 100%) !important; /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#334d88), color-stop(51%,#4365b2), color-stop(52%,#334d88), color-stop(100%,#28346a)) !important; /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #334d88 0%,#4365b2 51%,#334d88 52%,#28346a 100%) !important; /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #334d88 0%,#4365b2 51%,#334d88 52%,#28346a 100%) !important; /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #334d88 0%,#4365b2 51%,#334d88 52%,#28346a 100%) !important; /* IE10+ */
+  background: linear-gradient(to bottom,  #334d88 0%,#4365b2 51%,#334d88 52%,#28346a 100%) !important; /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#334d88', endColorstr='#28346a',GradientType=0 ) !important; /* IE6-9 */
+  color: white !important;
+  text-shadow: 1px 1px 1px black !important;
 }
 
 

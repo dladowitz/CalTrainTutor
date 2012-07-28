@@ -5,9 +5,11 @@
 
 <%= form_for @lesson do |f| %>
   <%= f.text_field :title, {placeholder: 'Title'} %>
-  <%= f.text_field :start, {placeholder: 'Starting Station'} %>
-  <%= f.text_field :end, {placeholder: 'Ending Station'} %>
+  <label for='lesson_start'>Starting Station</label>
+  <%= f.select(:start, Lesson::STATIONS) %>
+  <label for='lesson_start'>Ending Station</label>
+  <%= f.select(:start, Lesson::STATIONS) %>
   <%= f.text_field :time, {placeholder: 'Time Departing'} %>
   <a id=image_me href="#">Image Me</a>
-  <%= f.submit %>
+  <%= f.submit 'Save', {class: 'big_blue_button'} %>
 <% end %>
