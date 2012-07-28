@@ -43,7 +43,7 @@ class ApplicationController < ActionController::Base
     raise "unknown class: #{klass}" unless klass
 
     # handle friendly URLs across the board
-    id = params[key].to_i
+    id = params[key]
 
     if id == 'new'
       resource = klass.new

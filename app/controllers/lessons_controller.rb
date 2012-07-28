@@ -5,7 +5,7 @@ class LessonsController < ApplicationController
   end
 
   def show
-
+    load_by_id
   end
 
   def new
