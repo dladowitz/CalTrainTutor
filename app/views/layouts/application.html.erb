@@ -3,6 +3,18 @@
 <head>
   <title>CaltrainTutor</title>
   <%= stylesheet_link_tag "application", :media => "all" %>
+  <script type="text/javascript">
+    if (!window['console'] || !window.console['log']) {
+      window.console = {
+        log:function () {
+        },
+        warn:function () {
+        },
+        trace:function () {
+        }
+      }
+    }
+  </script>
   <%= javascript_include_tag "application" %>
   <script type="text/javascript" src="https://js.stripe.com/v1/"></script>
   <%= csrf_meta_tags %>
@@ -33,6 +45,7 @@
                        :href => '/',
                        :data => {
                            :icon => :search,
+                           :mini => true
                        }
                    }) %>
       <% if current_user %>
@@ -51,6 +64,7 @@
                          :href => '/me',
                          :data => {
                              :icon => :gear,
+                             :mini => true
                          }
                      }) %>
 
@@ -61,6 +75,8 @@
                          :href => '/signin',
                          :data => {
                              :icon => :gear,
+                             :mini => true,
+                             :ajax => false
                          }
                      }) %>
       <% end %>

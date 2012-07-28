@@ -1,7 +1,50 @@
 <h1><%= @lesson.title %></h1>
-<br/><%= @lesson.start %> <--> <%= @lesson.end %> @ <%= @lesson.time %>
-<br/><%= @lesson.creator.name %>
 
+<%#= render parial: 'users/preview', locals: {user: @lesson.creator} %>
+
+<div class="col">
+
+</div>
+<table>
+  <tr>
+    <td>
+      <label>Leaving At</label>
+    </td>
+    <td>
+      <label>
+        from
+      </label>
+    </td>
+    <td>
+      <%= @lesson.start %>
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2">
+      <div><%= @lesson.time %></div>
+    </td>
+    <td>
+      <label>
+        to
+      </label>
+    </td>
+    <td>
+      <%= @lesson.end %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label>
+        length
+      </label>
+    </td>
+    <td>
+      <span class="time">
+        45min
+      </span>
+    </td>
+  </tr>
+</table>
 
 <br/>
 <% if @lesson.student.present? %>

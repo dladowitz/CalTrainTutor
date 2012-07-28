@@ -2,8 +2,14 @@
 
 <h2>Showing lessons</h2>
 
-<%= render :partial => '/users/preview'%>
-
-
+<% if @lessons.present? %>
+  <ul data-role="listview" data-theme="g">
+    <% @lessons.each do |lesson| %>
+      <%= render :partial => '/users/preview', locals: {lesson: lesson} %>
+    <% end %>
+  </ul>
+<% else %>
+  No lessons yet.
+<% end %>
 
 
