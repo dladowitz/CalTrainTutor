@@ -11,6 +11,8 @@ class UsersController < ApplicationController
 
   def me
     @user = current_user
+    @lessons_offered = @user.lessons_offered
+    @lessons_taking = @user.lessons_received
     render :show
   end
 

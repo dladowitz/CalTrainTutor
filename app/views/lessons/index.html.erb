@@ -1,21 +1,9 @@
 <%= @page = :discovery %>
 
 <h2>Showing lessons</h2>
-<% if @lessons.present? %>
-  <ul data-role="listview" data-theme="g">
-    <% @lessons.each do |lesson| %>
-      <li>
-        <a href="<%= lesson_path(lesson) %>">
-          <%= lesson.title %>
-          <br/><%= lesson.start %> <--> <%= lesson.end %> @ <%= lesson.time %>
-          <br/>Teacher: <%= lesson.creator.name %>
-          <% if lesson.student %>
-            <br/>Student: <%= lesson.student.name %>
-          <% end %>
-        </a>
-      </li>
-    <% end %>
-  </ul>
-<% else %>
-  No lessons yet.
-<% end %>
+
+<%= render :partial => '/users/preview'%>
+
+
+
+

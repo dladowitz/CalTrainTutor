@@ -1,2 +1,18 @@
 <h1>Showing User</h1>
-<%= @user.to_yaml %>
+<!-- <%= @user.to_yaml %> -->
+<%= @user.name %>
+<img src="<%= @user.image %>" />
+
+
+<% if @lessons_offered.present? %>
+  <ul data-role="listview" data-theme="g">
+    <% @lessons_offered.each do |lesson| %>
+
+			<%= render :partial => 'preview', :locals => {:lesson => lesson } %>
+			
+    <% end %>
+  </ul>
+<% else %>
+  No lessons yet.
+<% end %>
+
