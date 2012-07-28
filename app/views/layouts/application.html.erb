@@ -45,6 +45,7 @@
                        :href => '/',
                        :data => {
                            :icon => :search,
+                           :mini => true
                        }
                    }) %>
       <% if current_user %>
@@ -63,6 +64,7 @@
                          :href => '/me',
                          :data => {
                              :icon => :gear,
+                             :mini => true
                          }
                      }) %>
 
@@ -73,6 +75,8 @@
                          :href => '/signin',
                          :data => {
                              :icon => :gear,
+                             :mini => true,
+                             :ajax => false
                          }
                      }) %>
       <% end %>
