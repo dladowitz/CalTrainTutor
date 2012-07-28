@@ -14,17 +14,15 @@
 <% @page ||= 'none' %>
 <%= jqm_page @page do %>
   page: <%= @page %>
+
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
+  <div class="alert">
+    <%= flash[:alert] %>
+  </div>
+
   <%= yield %>
-
-
-  <%= link_to 'find a lesson', '/' %>
-
-  <% if current_user %>
-    <%= link_to 'post a lesson', '/post' %>
-    <%= link_to 'my profile', '/me' %>
-  <% else %>
-    <a href="/signin" data-ajax="false">login</a>
-  <% end %>
 
   <div data-role="footer" class="ui-bar nopadding nofade" data-position="fixed" data-theme="a" id="root_footer">
     <%= nav_for @page do |n| %>
@@ -36,22 +34,35 @@
                            :icon => :search,
                        }
                    }) %>
-      <%=
-          n.button('post',
-                   {
-                       :href => '/post',
-                       :data => {
-                           :icon => :'arrow-u',
-                       }
-                   }) %>
-      <%=
-          n.button('profile',
-                   {
-                       :href => '/me',
-                       :data => {
-                           :icon => :gear,
-                       }
-                   }) %>
+      <% if current_user %>
+
+        <%=
+            n.button('post',
+                     {
+                         :href => '/post',
+                         :data => {
+                             :icon => :'arrow-u',
+                         }
+                     }) %>
+        <%=
+            n.button('profile',
+                     {
+                         :href => '/me',
+                         :data => {
+                             :icon => :gear,
+                         }
+                     }) %>
+
+      <% else %>
+        <%=
+            n.button('login',
+                     {
+                         :href => '/signin',
+                         :data => {
+                             :icon => :gear,
+                         }
+                     }) %>
+      <% end %>
     <% end %>
   </div>
 <% end %>

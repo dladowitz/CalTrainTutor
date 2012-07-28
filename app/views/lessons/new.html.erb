@@ -1,2 +1,9 @@
 <h2>Create Lesson</h2>
-<%= @lesson.to_yaml %>
+
+<%= form_for @lesson do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_field :start %>
+  <%= f.text_field :end %>
+  <%= f.text_field :time %>
+  <%= f.submit %>
+<% end %>

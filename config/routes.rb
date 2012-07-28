@@ -11,6 +11,8 @@ CaltrainTutor::Application.routes.draw do
   get '/me' => 'users#me'
   get '/post' => 'lessons#new'
 
+  resources :lessons
+
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
