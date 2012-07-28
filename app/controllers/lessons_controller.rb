@@ -26,7 +26,7 @@ class LessonsController < ApplicationController
 
   def complete_purchase
     load_by_id
-    current_user.purchase @lesson, params[:payment]
+    current_user.purchase @lesson, params[:lesson]
     redirect_to lesson_path(@lesson)
   end
 
