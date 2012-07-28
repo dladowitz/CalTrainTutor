@@ -1,11 +1,10 @@
 <li>
   <a href="<%= lesson_path(lesson) %>">
-<<<<<<< HEAD
-=======
+
     <% if lesson.creator.image %>
       <%= image_tag lesson.creator.image, {class: 'mug'} %>
     <% end %>
->>>>>>> master
+
     <%= lesson.title %>
     <br/><%= lesson.start %> <--> <%= lesson.end %> @ <%= lesson.time %>
     <br/>Teacher: <%= lesson.creator.name %>
