@@ -2,6 +2,13 @@ CaltrainTutor::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
+  get '/auth/:provider/callback' => 'sessions#create'
+  get '/auth/failure' => 'sessions#failure'
+  get '/signout' => 'sessions#destroy', :as => :signout
+  get '/signin' => 'sessions#new', :as => :signin
+  get '/session' => 'users#show_session'
+
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
@@ -48,7 +55,7 @@ CaltrainTutor::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'users#index'
 
   # See how all your routes lay out with "rake routes"
 
