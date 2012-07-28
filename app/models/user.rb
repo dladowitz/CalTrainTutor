@@ -2,14 +2,11 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
 
-<<<<<<< HEAD
-  #auth
-=======
+
   # created
   has_many :lessons_offered, as: :creator
   has_many :lessons_received, as: :student
 
->>>>>>> master
   field :provider, type: String
   field :uid, type: String
   field :credentials, type: Hash
