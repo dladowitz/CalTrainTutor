@@ -2,7 +2,14 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
 
+<<<<<<< HEAD
   #auth
+=======
+  # created
+  has_many :lessons_offered, as: :creator
+  has_many :lessons_received, as: :student
+
+>>>>>>> master
   field :provider, type: String
   field :uid, type: String
   field :credentials, type: Hash
@@ -52,6 +59,15 @@ class User
         
       end
     end
+  end
+
+  def purchase(lesson)
+    if lesson.student.present?
+      raise "Already has student: #{lesson.student.name}"
+    end
+
+    lesson.student = self
+    lesson.save
   end
 
 end

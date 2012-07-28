@@ -1,0 +1,19 @@
+<h1><%= @lesson.title %></h1>
+<br/><%= @lesson.start %> <--> <%= @lesson.end %> @ <%= @lesson.time %>
+<br/><%= @lesson.creator.name %>
+
+
+<br/>
+<% if @lesson.student.present? %>
+  <% if current_user == @lesson.student %>
+    <a href="<%= buy_lesson_path(@lesson) %>">
+      Complete
+    </a>
+  <% else %>
+    Purchased already by <%= @lesson.student.name %>
+  <% end %>
+<% else %>
+  <a href="<%= buy_lesson_path(@lesson) %>">
+    Sign Up!
+  </a>
+<% end %>

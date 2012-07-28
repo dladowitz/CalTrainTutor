@@ -8,12 +8,11 @@
 </head>
 <body>
 
-<h1>Caltrain Tutor</h1>
-
-
 <% @page ||= 'none' %>
 <%= jqm_page @page do %>
-  page: <%= @page %>
+  <div data-role="header">
+    <%= image_tag 'traintrainlogo.png' %>
+  </div>
 
   <div class="notice">
     <%= flash[:notice] %>
