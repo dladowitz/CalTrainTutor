@@ -38,6 +38,8 @@ GEM
       execjs
     coffee-script-source (1.3.3)
     erubis (2.7.0)
+    exceptional (2.0.32)
+      rack
     execjs (1.4.0)
       multi_json (~> 1.0)
     faraday (0.8.1)
@@ -131,6 +133,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  exceptional
   jquery-rails
   mongoid (~> 3.0.0)
   omniauth
