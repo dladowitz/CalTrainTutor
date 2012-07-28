@@ -2,5 +2,17 @@
 <!-- <%= @user.to_yaml %> -->
 <%= @user.name %>
 <img src="<%= @user.image %>" />
-<%= @user.age %>
+
+
+<% if @lessons_offered.present? %>
+  <ul data-role="listview" data-theme="g">
+    <% @lessons_offered.each do |lesson| %>
+
+			<%= render :partial => 'preview', :locals => {:lesson => lesson } %>
+			
+    <% end %>
+  </ul>
+<% else %>
+  No lessons yet.
+<% end %>
 
