@@ -11,3 +11,15 @@
  *= require_self
  *= require_tree .
  */
+
+.ui-header {
+  background: url('/assets/headerbackground.png') repeat-x !important;
+}
+
+.ui-footer {
+  background: url('/assets/navbackground.png') repeat-x !important;
+}
+
+.ui-page {
+  background: url('/assets/bodybackground.png') !important;
+}

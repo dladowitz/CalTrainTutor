@@ -1,9 +1,9 @@
 <h2>Create Lesson</h2>
 
 <%= form_for @lesson do |f| %>
-  <%= f.text_field :title %>
-  <%= f.text_field :start %>
-  <%= f.text_field :end %>
-  <%= f.text_field :time %>
+  <%= f.text_field :title, {placeholder: 'Title'} %>
+  <%= f.text_field :start, {placeholder: 'Starting Station'} %>
+  <%= f.text_field :end, {placeholder: 'Ending Station'} %>
+  <%= f.text_field :time, {placeholder: 'Time Departing'} %>
   <%= f.submit %>
 <% end %>

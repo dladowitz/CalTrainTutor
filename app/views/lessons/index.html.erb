@@ -8,6 +8,10 @@
         <a href="<%= lesson_path(lesson) %>">
           <%= lesson.title %>
           <br/><%= lesson.start %> <--> <%= lesson.end %> @ <%= lesson.time %>
+          <br/>Teacher: <%= lesson.creator.name %>
+          <% if lesson.student %>
+            <br/>Student: <%= lesson.student.name %>
+          <% end %>
         </a>
       </li>
     <% end %>

@@ -11,7 +11,11 @@ CaltrainTutor::Application.routes.draw do
   get '/me' => 'users#me'
   get '/post' => 'lessons#new'
 
-  resources :lessons
+  resources :lessons do
+    member do
+      get :buy
+    end
+  end
 
 
   # Sample of regular route:
