@@ -13,7 +13,9 @@ CaltrainTutor::Application.routes.draw do
 
   resources :lessons do
     member do
-      get :buy
+      get '/buy' => 'lessons#new_purchase'
+      post '/buy' => 'lessons#complete_purchase'
+      put '/buy' => 'lessons#complete_purchase'
     end
   end
 
