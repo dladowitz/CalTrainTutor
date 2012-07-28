@@ -1,10 +1,5 @@
 <li>
   <a href="<%= lesson_path(lesson) %>">
-
-    <% if lesson.creator.image %>
-      <%= image_tag lesson.creator.image, {class: 'mug'} %>
-    <% end %>
-
     <%= lesson.title %>
     <br/><%= lesson.start %> <--> <%= lesson.end %> @ <%= lesson.time %>
     <br/>Teacher: <%= lesson.creator.name %>

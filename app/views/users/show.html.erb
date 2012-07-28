@@ -3,7 +3,7 @@
 <%= @user.name %>
 <img src="<%= @user.image %>" />
 
-
+<h2>Teaching Soon</h2>
 <% if @lessons_offered.present? %>
   <ul data-role="listview" data-theme="g">
     <% @lessons_offered.each do |lesson| %>
@@ -16,3 +16,15 @@
   No lessons yet.
 <% end %>
 
+<h2>Taking Soon</h2>
+<% if @lessons_taking.present? %>
+  <ul data-role="listview" data-theme="g">
+    <% @lessons_taking.each do |lesson| %>
+
+			<%= render :partial => 'preview_taking', :locals => {:lesson => lesson } %>
+			
+    <% end %>
+  </ul>
+<% else %>
+  No lessons yet.
+<% end %>
