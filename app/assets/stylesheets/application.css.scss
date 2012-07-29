@@ -13,16 +13,16 @@
  */
 
 div#name {
-	color: blue;
-    text-align: center;
-	font-family:"Verdana";
-	font-size: 1.25em;
+  color: blue;
+  text-align: center;
+  font-family: "Verdana";
+  font-size: 1.25em;
 }
 
 img#profile_photo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto
+  display: block;
+  margin-left: auto;
+  margin-right: auto
 }
 
 .ui-header {
@@ -46,8 +46,8 @@ img#profile_photo {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#99ffffff', endColorstr = '#00ffffff', GradientType = 0); /* IE6-9 */
 
-  img{
-    clip: rect(0px,50px,50px,0px);
+  img {
+    clip: rect(0px, 50px, 50px, 0px);
     margin-left: -1px;
   }
 }
@@ -66,7 +66,7 @@ img.mug {
   height: 100%;
 }
 
-.blue-text{
+.blue-text {
   color: #295796;
   font-size: 19px;
   margin-top: 6px;
@@ -116,7 +116,7 @@ table {
 
 }
 
-.big_blue_button div, .big_blue_button a  {
+.big_blue_button div, .big_blue_button a {
   display: block;
   border-radius: 3px;
   background: #334d88 !important; /* Old browsers */
@@ -169,27 +169,33 @@ form {
   min-height: 64px;
 }
 
-#main-image{
+#main-image {
   //width: 100px;
   margin: auto;
   display: block;
   max-width: 100%;
 }
 
-#min_heighted{
+#min_heighted {
   min-height: 232px;
 }
 
-.padded{
+.padded {
   padding: 13px;
   line-height: 1.5;
   color: #6B6B6B;
 }
 
-.padded_top{
+.padded_top {
   padding: 20px 0;
 }
 
-.pop_out{
+.pop_out {
   margin: 0 -20px;
 }
+
+.hidden:not(.open) {
+  display: none !important;
+
+}
+

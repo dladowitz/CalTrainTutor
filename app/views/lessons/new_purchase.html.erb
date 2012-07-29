@@ -12,24 +12,42 @@
     <% end %>
 
     $("#payment-form").live('submit', function (event) {
-      console.log('event triggered', this, arguments);
+//      console.log('event triggered', this, arguments);
       // disable the submit button to prevent repeated clicks
       $('.submit-button').attr("disabled", "disabled");
+
+      // should be july 2012
+      var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+//      var results = $('.card-expiry').val().match(/(.*) (\d*)/)
+      var results = $('.card-expiry').val().match(/(\d*)-(\d*)/)
+      if (!results){
+        alert($('.card-expiry').val())
+        alert(results)
+        alert('need expiry month and year');
+        return false;
+      }
+
+      var year = results[1];
+//      var month = months.indexOf(results[1]) +1;
+      var month = results[2];
+
+//      alert(year);
+//      alert(month);
 
       abc = Stripe.createToken({
         number:$('.card-number').val(),
         cvc:$('.card-cvc').val(),
-        exp_month:$('.card-expiry-month').val(),
-        exp_year:$('.card-expiry-year').val()
+        exp_month: month,
+        exp_year: year
       }, stripeResponseHandler);
-      console.log(abc);
+//      console.log('stripe sent', abc);
 
       // prevent the form from submitting with the default action
       return false;
     });
 
     function stripeResponseHandler(status, response) {
-      console.log('response handler', this, arguments);
+//      console.log('response handler', this, arguments);
       if (response.error) {
         // show the errors on the form
         $(".payment-errors").text(response.error.message);
@@ -48,15 +66,13 @@
 <% end %>
 <h1>Buy a lesson in <%= @lesson.name.titleize %></h1>
 
-<div class="payment-errors"></div>
-
 <%= form_for(@lesson, {url: buy_lesson_path(@lesson), html:
     {id: 'payment-form', :'data-ajax' => "false"}}) do |f| %>
   <div class="padded_top">
-    <%= f.text_field :'cardnumber', {class: "card-number", placeholder: 'Card Number'} %>
-    <%= f.text_field :'cardcvc', {class: "card-cvc", placeholder: 'CVC'} %>
-    <%= f.text_field :'cardexpirymonth', {class: "card-expiry-month", placeholder: 'Expiry Month'} %>
-    <%= f.text_field :'cardexpirymonth', {class: "card-expiry-year", placeholder: 'Expiry Year'} %>
+    <div class="payment-errors"></div>
+    <%= f.text_field :'cardnumber', {class: "card-number", placeholder: 'Card Number', required: true} %>
+    <%= f.text_field :'cardcvc', {class: "card-cvc", placeholder: 'CVC', required: true} %>
+    <%= f.text_field :'cardexpiry', {class: "card-expiry", placeholder: 'Expires', type: 'month', required: true} %>
   </div>
   <div class="big_blue_button tall_bg pop_out">
     <%= submit_tag 'Book for $25' %>

@@ -2,10 +2,10 @@
   <div class="min_height padded_top">
     <%= f.hidden_field :image_url %>
     <%= f.text_field :title, {placeholder: 'Type of Lesson', required: true} %>
-    <img src="" id="main-image"/>
+    <img src="" class="hidden" id="main-image"/>
     <%= f.select(:start, ['Departure Station'] + Lesson::STATIONS) %>
     <%= f.select(:end, ['Arrival Station'] + Lesson::STATIONS) %>
-    <%= f.text_field :time, {placeholder: 'Time Departing', required: true} %>
+    <%= f.text_field :date, {placeholder: 'Time Departing', required: true, type: 'date'} %>
   </div>
   <div class="big_blue_button tall_bg pop_out">
     <%= f.submit 'Post a Lesson', {class: 'big_blue_button'} %>

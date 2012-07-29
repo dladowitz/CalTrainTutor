@@ -15,6 +15,9 @@ class LessonsController < ApplicationController
   end
 
   def create
+    if date = params[:lesson][:date]
+      params[:lesson][:date] = Date.strptime(date, '%b %d, %Y') # 'Jul 29, 2012', '%b %d, %Y'
+    end
     @lesson = Lesson.new(params[:lesson])
     @lesson.creator = current_user
     @lesson.save!

@@ -94,6 +94,10 @@ class User
 
     # todo: validate ?
 
+    unless payment_info[:cardnumber] && payment_info[:cardcvc] && payment_info[:cardexpirymonth] && payment_info[:stripeToken]
+      raise "Missing Payment Credentials"
+    end
+
     lesson.payment = payment_info
     lesson.student = self
     lesson.save

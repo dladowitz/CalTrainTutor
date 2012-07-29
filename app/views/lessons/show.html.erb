@@ -23,8 +23,8 @@
       </td>
       <td>
         <span class="time">
-                <%= @lesson.time %>
-              </span>
+          <%= @lesson.time %>
+        </span>
 
       </td>
     </tr>
@@ -36,8 +36,8 @@
       </td>
       <td>
         <span class="info">
-                <%= @lesson.start.try :titleize %>
-              </span>
+          <%= @lesson.start.try :titleize %>
+        </span>
       </td>
     </tr>
     <tr>
@@ -48,8 +48,8 @@
       </td>
       <td>
         <span class="info">
-                <%= @lesson.end.try :titleize %>
-              </span>
+          <%= @lesson.end.try :titleize %>
+        </span>
 
       </td>
     </tr>
@@ -61,10 +61,24 @@
       </td>
       <td>
         <span class="info">
-                40min
-              </span>
+          40min
+        </span>
       </td>
     </tr>
+    <% if @lesson.date %>
+      <tr>
+        <td>
+          <label>
+            day
+          </label>
+        </td>
+        <td>
+          <span class="info">
+            <%= eta(@lesson.date) %>
+          </span>
+        </td>
+      </tr>
+    <% end %>
   </table>
 
   <% if @lesson.booked? && [@lesson.creator, @lesson.student].include?(current_user) %>

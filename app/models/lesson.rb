@@ -52,5 +52,9 @@ class Lesson
     Lesson::STATIONS.index(self.start) > Lesson::STATIONS.index(self.end)
   end
 
+  def cardexpiry
+    nil
+  end
+
 
 end
