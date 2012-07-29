@@ -1,26 +1,23 @@
-<<<<<<< HEAD
+
 
 <!-- <%= @user.to_yaml %> -->
 <% new_image = @user.image %>
 <% new_image["square"] = "large"%>
+
 <span id="name"><%= @user.name %></span>
-<%= @user.birthday %><br/>
-
-<img src="<%= new_image %>" id="profile_image" />
-
+<%= @user.age %><br/>
+<img src="<%= new_image %>" />
 
 
 
 
-=======
+
+
 <% content_for :back do %>
   <%= link_to 'back', :back, {:"data-icon" => "arrow-l", :"data-iconpos" => 'left',  style: "margin-top: 5px !important;"} %>
 <% end %>
 
-<%= @user.name %>
-<%= @user.birthday %>
-<img src="<%= @user.image %>" />
->>>>>>> master
+
 
 <h2>Teaching Soon</h2>
 <% if @lessons_offered.present? %>
