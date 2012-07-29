@@ -12,15 +12,17 @@
  *= require_tree .
  */
 
-#name {
-	text-shadow: 1px 1px 1px white;
-	color: red;
-	
+div#name {
+	color: blue;
+    text-align: center;
+	font-family:"Verdana";
+	font-size: 1.25em;
 }
 
-#profile_image {
-	text-shadow: 1px 1px 1px white;
-	color: red;	
+img#profile_photo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
 }
 
 .ui-header {

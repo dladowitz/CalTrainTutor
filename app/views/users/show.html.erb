@@ -1,12 +1,22 @@
 
 
 <!-- <%= @user.to_yaml %> -->
-<% new_image = @user.image %>
-<% new_image["square"] = "large"%>
 
-<span id="name"><%= @user.name %></span>
-<%= @user.age %><br/>
-<img src="<%= new_image %>" />
+
+
+	<% new_image = @user.image %>
+	<% new_image["square"] = "large"%>
+
+
+<img id="profile_photo" src="<%= new_image %>" /> <br />
+
+
+
+
+<div id="name">
+	<%= @user.name %>	
+	| Age | <%= @user.age %>
+</div>
 
 
 
