@@ -3,12 +3,16 @@
 
     <%= image_tag lesson.image, {class: 'mug'} %>
 
-    <%= lesson.title %>
-    <br/><%= lesson.start %> <--> <%= lesson.end %> @ <%= lesson.time %>
+    <div class="blue-text">
+      <%= lesson.title %>
+    </div>
+    <!--
+    <br/><%= lesson.start %> <%= lesson.end %> @ <%= lesson.time %>
     <br/>Teacher: <%= lesson.creator.name %>
     <% if lesson.student %>
       <br/>Student: <%= lesson.student.name %>
     <% end %>
+    -->
   </a>
 </li>
 

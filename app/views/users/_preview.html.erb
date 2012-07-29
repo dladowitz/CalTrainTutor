@@ -2,7 +2,9 @@
   <a href="<%= user_path(user) %>">
     <%= image_tag user.image, {class: 'mug'} %>
 
-    <%= user.name %>
+    <div class="blue-text">
+      <%= user.name.titleize %>
+    </div>
   </a>
 </li>
 

@@ -10,15 +10,16 @@ class Lesson
   field :start, type: String
   field :end, type: String
   field :time, type: String
+  field :image_url, type: String
 
   field :payment, type: Hash, default: {}
 
   alias_method :name, :title
 
   STATIONS = ['San Francisco', '22nd Street', 'Bayshore', 'South San Francisco', 'San Bruno', 'Millbrae',
-              'Broadway Weekend only', 'Burlingame', 'San Mateo', 'Hayward Park', 'Hillsdale', 'Belmont',
+              'Burlingame', 'San Mateo', 'Hayward Park', 'Hillsdale', 'Belmont',
               'San Carlos', 'Redwood City', 'Menlo Park', 'Palo Alto', 'California Ave.', 'San Antonio', 'Mountain View',
-              'Sunnyvale', 'Lawrence', 'Santa Clara', 'College Park', 'San Jose Diridon']
+              'Sunnyvale', 'Lawrence', 'Santa Clara', 'College Park', 'San Jose']
 
 
   def cardnumber
@@ -38,7 +39,11 @@ class Lesson
   end
 
   def image
-    self.creator.image
+    self.image_url || self.creator.image
+  end
+
+  def booked?
+    self.student.present?
   end
 
 

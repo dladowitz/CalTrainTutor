@@ -19,25 +19,6 @@
   <%= javascript_include_tag "application" %>
   <script type="text/javascript" src="https://js.stripe.com/v1/"></script>
   <script src="https://www.google.com/jsapi"></script>
-
-  <script type="text/javascript">
-
-    google.load('search', '1');
-    var imageSearch;
-    google.setOnLoadCallback(function () {
-      console.log('onload', this, arguments)
-      imageSearch = new google.search.ImageSearch();
-      imageSearch.setSearchCompleteCallback(this, function(){
-        console.log('complete', this, arguments);
-      }, null);
-      imageSearch.execute("Subaru STI");
-      google.search.Search.getBranding('branding');
-
-    });
-
-  </script>
-
-
   <%= csrf_meta_tags %>
   <%= yield :header %>
 </head>
@@ -66,23 +47,23 @@
 
       <% if current_user %>
         <a href="/me" style="width: <%= width -%>">
-          <img src="/assets/icons/profile-double.png"/>
+            <img src="/assets/icons/profileicon.png" style="border-radius: 0px !important;"/>
           <br/>Profile
         </a>
       <% else %>
         <a href="/signin" style="width: <%= width -%>">
-          <img src="/assets/icons/profile.png"/>
+          <img src="/assets/icons/profileicon.png" style="border-radius: 0px !important;"/>
           <br/>Login
         </a>
       <% end %>
       <a href="/" class="border-left" style="border-radius: 0px !important; width: <%= width == '33%' ? '34%' : width -%>">
-        <img src="/assets/icons/findalesson.png"/>
-        <br/>Find a Lesson
+        <img src="/assets/icons/findalessonicon.png"/>
+        <br/>Find
       </a>
       <% if current_user %>
         <a href="/post" class="border-left" style="border-radius: 0px !important; width: <%= width -%>">
-          <img src="/assets/icons/postalesson.png"/>
-          <br/>Post a Lesson
+          <img src="/assets/icons/postalessonicon.png"/>
+          <br/>Post
         </a>
       <% end %>
     <% end %>

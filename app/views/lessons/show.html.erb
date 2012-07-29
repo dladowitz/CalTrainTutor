@@ -1,71 +1,92 @@
 <% content_for :back do %>
-  <a href="/" data-icon="arrow-l" data-iconpos='left' style="margin-top: 5px !important;">Back</a>
+  <a href="/" data-icon="arrow-l" data-iconpos='left' style="margin-top: 7px !important;">Back</a>
 <% end %>
 
-<h1><%= @lesson.title %></h1>
+<div id=min_heighted>
 
-<ul data-role="listview" data-theme="g">
-  <%= render partial: 'users/preview', locals: {user: @lesson.creator} %>
-</ul>
 
-<table cellpadding="0" cellmargin="0" cellspacing="0">
-  <tr>
-    <td>
-      <label>Leaving At</label>
-    </td>
-    <td>
-      <label>
-        from
-      </label>
-    </td>
-    <td>
+  <% if @lesson.image_url %>
+    <img id="main-image" src="<%= @lesson.image_url %>"/>
+  <% end %>
+
+  <h1><%= @lesson.title.titleize %></h1>
+
+
+  <ul data-role="listview" data-theme="g">
+    <%= render partial: 'users/preview', locals: {user: @lesson.creator} %>
+  </ul>
+
+  <table cellpadding="0" cellmargin="0" cellspacing="0">
+    <tr>
+      <td style="width: 44%;">
+        <label>Leaving At</label>
+      </td>
+      <td>
+        <label>
+          from
+        </label>
+      </td>
+      <td>
       <span class="info">
-        <%= @lesson.start %>
+        <%= @lesson.start.try :titleize %>
       </span>
-    </td>
-  </tr>
-  <tr>
-    <td rowspan="2">
+      </td>
+    </tr>
+    <tr>
+      <td rowspan="2">
       <span class="time">
         <%= @lesson.time %>
       </span>
-    </td>
-    <td>
-      <label>
-        to
-      </label>
-    </td>
-    <td>
+      </td>
+      <td>
+        <label>
+          to
+        </label>
+      </td>
+      <td>
       <span class="info">
-        <%= @lesson.end %>
+        <%= @lesson.end.try :titleize %>
       </span>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <label>
-        length
-      </label>
-    </td>
-    <td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>
+          length
+        </label>
+      </td>
+      <td>
       <span class="info">
         40min
       </span>
-    </td>
-  </tr>
-</table>
+      </td>
+    </tr>
+  </table>
 
-<br/>
+  <% if @lesson.booked? && [@lesson.creator, @lesson.student].include?(current_user) %>
+    <div class="padded">
+      Hurrah! Your lesson is booked! All teachers and students should meet for their lessons in the very front car,
+      towards the front door. After you’ve greeted each other then you two can choose whatever location is most
+      convenient for your lesson.
+    </div>
+  <% end %>
+
+</div>
+
 <% if @lesson.student.present? %>
   <% if current_user == @lesson.student %>
     <a href="<%= buy_lesson_path(@lesson) %>">
       Complete
     </a>
   <% else %>
-    Purchased already by <%= @lesson.student.name %>
+    <div style="text-align: center" class="tall_bg">
+      Purchased already by <%= @lesson.student.name %>
+    </div>
   <% end %>
 <% else %>
-  <a class="big_blue_button" data-role="button" href="<%= buy_lesson_path(@lesson) %>">
-    Book for $25
-  </a>
+  <div class="tall_bg big_blue_button">
+    <a data-role="button" href="<%= buy_lesson_path(@lesson) %>">
+      Book for $25
+    </a>
+  </div>
 <% end %>

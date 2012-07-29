@@ -32,6 +32,10 @@
   background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%); /* IE10+ */
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#99ffffff', endColorstr = '#00ffffff', GradientType = 0); /* IE6-9 */
+
+  img{
+    clip: rect(0px,50px,50px,0px);
+  }
 }
 
 h1, h2 {
@@ -48,11 +52,20 @@ img.mug {
   height: 100%;
 }
 
+.blue-text{
+  color: #295796;
+  font-size: 19px;
+  margin-top: 6px;
+  font-weight: bold;
+}
+
 table {
+  border-collapse: collapse;
+  width: 100%;
   color: #295796;
   font-weight: bold;
   .time {
-    font-size: 17pt;
+    font-size: 23pt;
   }
   .info {
     font-size: 13pt;
@@ -61,8 +74,8 @@ table {
     color: #898989;
   }
   td {
-    padding: 3px;
-    border: 1px solid red;
+    padding: 5px 11px;
+    border: 1px solid #aaa;
   }
 }
 
@@ -70,29 +83,25 @@ table {
   margin: 0 !important;
   padding: 0 !important;
   a {
-    height: 72px;
+    height: 55px;
+  }
+  img {
+    width: 30px;
   }
 }
 
 [data-role=header] {
   text-align: center;
-  img {
-    width: 55px;
-  }
 }
 
 #logo {
   width: 151px;
-  padding: 8px;
+  padding-top: 9px;
+  padding-bottom: 7px;
+
 }
 
-.ui-bar-a .ui-shadow, .ui-bar-b .ui-shadow, .ui-bar-c .ui-shadow {
-  > span{
-    margin-top: 5px !important;
-  }
-}
-
-.big_blue_button {
+.big_blue_button div, .big_blue_button a  {
   display: block;
   border-radius: 3px;
   background: #334d88 !important; /* Old browsers */
@@ -127,7 +136,7 @@ table {
 }
 
 form {
-  padding: 20px;
+  padding: 0 20px;
 }
 
 [data-corners=true], input {
@@ -137,4 +146,35 @@ form {
 [data-role="controlgroup"] {
   margin: 0 !important;
   padding: 0 !important;
+}
+
+.tall_bg {
+  background: url('/assets/behindbuttonbackground.png') repeat-x;
+  padding: 10px;
+  min-height: 64px;
+}
+
+#main-image{
+  //width: 100px;
+  margin: auto;
+  display: block;
+  max-width: 100%;
+}
+
+#min_heighted{
+  min-height: 232px;
+}
+
+.padded{
+  padding: 13px;
+  line-height: 1.5;
+  color: #6B6B6B;
+}
+
+.padded_top{
+  padding: 20px 0;
+}
+
+.pop_out{
+  margin: 0 -20px;
 }

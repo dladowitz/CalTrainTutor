@@ -1,28 +1,43 @@
-$(document).on 'click', '#image_me', ()->
-  console.log 'click', this, arguments
-#  $.ajax {
-#    url: 'https://www.googleapis.com/customsearch/v1'
-##    url: 'https://ajax.googleapis.com/ajax/services/search/images'
-#    data: {
-#      v: "1.0",
-#      rsz: '8',
-#      q: 'spain',
-#      safe: 'active'
-#      key: 'AIzaSyBBfQWFFtvFGXa8DJ6FkPW8biT8dp7OFJA'
-#      cx: '017576662512468239146:omuauf_lfve'
-##      q: 'lectures'
-#      searchType: 'image'
-#    }
-#    success: ()->
-#      console.log 'success!', this, arguments
-#  }
-#  false
-#
+image_results = null;
+current_index = 0;
 
-  $.getJSON "http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=58b0c3d8f32066e7a3328a4104794307&tags=flower&per_page=3", {format: 'json'},
-    (data) ->
-      console.log(this, arguments)
+window.set_image = ->
+  unless image_results
+    return false;
+
+  url = image_results[current_index].url
+  console.log url;
+  $('#main-image').attr('src', url)
+  $('#lesson_image_url').attr('value', url)
+
+  current_index++;
+
+window.get_images = ->
+  $.ajax {
+      url: 'https://ajax.googleapis.com/ajax/services/search/images'
+      dataType: "jsonp"
+      data: {
+        v: "1.0",
+        rsz: '8',
+        q: $('#lesson_title').val(),
+        safe: 'active'
+      }
+      success: (data)->
+        console.log 'success!', this, arguments
+        image_results = data.responseData.results
+        set_image();
+    }
+
+$(document).on 'change', '#lesson_title', ()->
+  console.log 'change', this, arguments
+  get_images();
+  false
+
+$(document).on 'click',  '#main-image', ()->
+  set_image()
+  false
 
 
-window.jsonFlickrApi = ()->
-  console.log this, arguments
+
+$("#new_lesson").validate();
+

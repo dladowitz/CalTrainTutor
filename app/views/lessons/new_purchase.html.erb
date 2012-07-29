@@ -1,3 +1,7 @@
+<% content_for :back do %>
+  <%= link_to 'back', :back, {:"data-icon" => "arrow-l", :"data-iconpos" => 'left',  style: "margin-top: 7px !important;"} %>
+<% end %>
+
 <%= content_for :header do %>
   <script type="text/javascript">
     // this identifies your website in the createToken call below
@@ -42,16 +46,20 @@
     }
   </script>
 <% end %>
-
-<h1>Buy <%= @lesson.name %></h1>
+<h1>Buy a lesson in <%= @lesson.name.titleize %></h1>
 
 <div class="payment-errors"></div>
 
-<%= form_for(@lesson, {url: buy_lesson_path(@lesson), html: {id: 'payment-form', :'data-ajax' => "false" } } ) do |f| %>
-  <%= f.text_field :'cardnumber', {class: "card-number", placeholder: 'Card Number'} %>
-  <%= f.text_field :'cardcvc', {class: "card-cvc", placeholder: 'CVC'} %>
-  <%= f.text_field :'cardexpirymonth', {class: "card-expiry-month", placeholder: 'Expiry Month'} %>
-  <%= f.text_field :'cardexpirymonth', {class: "card-expiry-year", placeholder: 'Expiry Year'} %>
-  <%= submit_tag %>
+<%= form_for(@lesson, {url: buy_lesson_path(@lesson), html:
+    {id: 'payment-form', :'data-ajax' => "false"}}) do |f| %>
+  <div class="padded_top">
+    <%= f.text_field :'cardnumber', {class: "card-number", placeholder: 'Card Number'} %>
+    <%= f.text_field :'cardcvc', {class: "card-cvc", placeholder: 'CVC'} %>
+    <%= f.text_field :'cardexpirymonth', {class: "card-expiry-month", placeholder: 'Expiry Month'} %>
+    <%= f.text_field :'cardexpirymonth', {class: "card-expiry-year", placeholder: 'Expiry Year'} %>
+  </div>
+  <div class="big_blue_button tall_bg pop_out">
+    <%= submit_tag 'Book for $25' %>
+  </div>
 <% end %>
 
