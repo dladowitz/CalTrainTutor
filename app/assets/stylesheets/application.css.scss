@@ -49,7 +49,10 @@ h1, h2 {
   display: block;
   background: url('/assets/subtitlebg.png') repeat-x !important;
   color: #707070;
-  text-shadow: 1px 1px 1px white;
+  text-shadow: 1px 0px 1px white;
+  padding: 5px 0 5px 10px;
+  margin: 0;
+  font-size: 14px;
 }
 
 img.mug {
@@ -62,54 +65,87 @@ table {
   .time {
     font-size: 17pt;
   }
-  .info{
+  .info {
     font-size: 13pt;
   }
   label {
     color: #898989;
   }
-  td{
+  td {
     padding: 3px;
+    border: 1px solid red;
   }
 }
 
-[data-role=footer]{
-  a{
+[data-role=footer] {
+  margin: 0 !important;
+  padding: 0 !important;
+  a {
     height: 72px;
   }
 }
-[data-role=header]{
+
+[data-role=header] {
   text-align: center;
+  img {
+    width: 55px;
+  }
 }
 
-#logo{
+#logo {
   width: 151px;
+  padding: 8px;
+}
+
+.ui-bar-a .ui-shadow, .ui-bar-b .ui-shadow, .ui-bar-c .ui-shadow {
+  > span{
+    margin-top: 5px !important;
+  }
 }
 
 .big_blue_button {
   display: block;
   border-radius: 3px;
   background: #334d88 !important; /* Old browsers */
-  background: -moz-linear-gradient(top,  #334d88 0%, #4365b2 51%, #334d88 52%, #28346a 100%) !important; /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#334d88), color-stop(51%,#4365b2), color-stop(52%,#334d88), color-stop(100%,#28346a)) !important; /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #334d88 0%,#4365b2 51%,#334d88 52%,#28346a 100%) !important; /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #334d88 0%,#4365b2 51%,#334d88 52%,#28346a 100%) !important; /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #334d88 0%,#4365b2 51%,#334d88 52%,#28346a 100%) !important; /* IE10+ */
-  background: linear-gradient(to bottom,  #334d88 0%,#4365b2 51%,#334d88 52%,#28346a 100%) !important; /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#334d88', endColorstr='#28346a',GradientType=0 ) !important; /* IE6-9 */
+  background: -moz-linear-gradient(top, #334d88 0%, #4365b2 51%, #334d88 52%, #28346a 100%) !important; /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #334d88), color-stop(51%, #4365b2), color-stop(52%, #334d88), color-stop(100%, #28346a)) !important; /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #334d88 0%, #4365b2 51%, #334d88 52%, #28346a 100%) !important; /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #334d88 0%, #4365b2 51%, #334d88 52%, #28346a 100%) !important; /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #334d88 0%, #4365b2 51%, #334d88 52%, #28346a 100%) !important; /* IE10+ */
+  background: linear-gradient(to bottom, #334d88 0%, #4365b2 51%, #334d88 52%, #28346a 100%) !important; /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#334d88', endColorstr = '#28346a', GradientType = 0) !important; /* IE6-9 */
   color: white !important;
   text-shadow: 1px 1px 1px black !important;
 }
 
-
 .ui-icon-profile {
-	background-image: url("icons/profile.png") !important;
+  background-image: url("icons/profile.png") !important;
 }
 
 .ui-icon-postalesson {
-	background-image: url("icons/postalesson.png") !important;
+  background-image: url("icons/postalesson.png") !important;
 }
 
 .ui-icon-findalesson {
-	background-image: url("icons/findalesson.png") !important;
+  background-image: url("icons/findalesson.png") !important;
+}
+
+.border-left {
+  border-left: 1px solid white;
+  border-color: rgba(255, 255, 255, .3);
+  border-radius: 0px !important;
+  box-shadow: 0px 1px 1px 1px #666;
+}
+
+form {
+  padding: 20px;
+}
+
+[data-corners=true], input {
+  border-radius: 5px !important;
+}
+
+[data-role="controlgroup"] {
+  margin: 0 !important;
+  padding: 0 !important;
 }

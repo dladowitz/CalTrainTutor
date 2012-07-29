@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <!-- <%= @user.to_yaml %> -->
 <% new_image = @user.image %>
@@ -11,14 +12,21 @@
 
 
 
+=======
+<% content_for :back do %>
+  <%= link_to 'back', :back, {:"data-icon" => "arrow-l", :"data-iconpos" => 'left',  style: "margin-top: 5px !important;"} %>
+<% end %>
+
+<%= @user.name %>
+<%= @user.birthday %>
+<img src="<%= @user.image %>" />
+>>>>>>> master
 
 <h2>Teaching Soon</h2>
 <% if @lessons_offered.present? %>
   <ul data-role="listview" data-theme="g">
     <% @lessons_offered.each do |lesson| %>
-
-			<%= render :partial => 'preview', :locals => {:lesson => lesson } %>
-			
+			<%= render :partial => 'lessons/preview', :locals => {:lesson => lesson } %>
     <% end %>
   </ul>
 <% else %>
@@ -31,9 +39,7 @@
 <% if @lessons_taking.present? %>
   <ul data-role="listview" data-theme="g">
     <% @lessons_taking.each do |lesson| %>
-
-			<%= render :partial => 'preview_taking', :locals => {:lesson => lesson } %>
-			
+			<%= render :partial => 'lessons/preview', :locals => {:lesson => lesson } %>
     <% end %>
   </ul>
 <% else %>

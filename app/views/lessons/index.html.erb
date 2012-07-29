@@ -1,11 +1,11 @@
-<%= @page = :discovery %>
+<% @page = :discovery %>
 
 <h2>Showing lessons</h2>
 
 <% if @lessons.present? %>
   <ul data-role="listview" data-theme="g">
     <% @lessons.each do |lesson| %>
-      <%= render :partial => '/users/preview', locals: {lesson: lesson} %>
+      <%= render :partial => '/lessons/preview', locals: {lesson: lesson} %>
     <% end %>
   </ul>
 <% else %>

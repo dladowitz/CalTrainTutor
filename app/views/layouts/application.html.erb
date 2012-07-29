@@ -18,6 +18,26 @@
   </script>
   <%= javascript_include_tag "application" %>
   <script type="text/javascript" src="https://js.stripe.com/v1/"></script>
+  <script src="https://www.google.com/jsapi"></script>
+
+  <script type="text/javascript">
+
+    google.load('search', '1');
+    var imageSearch;
+    google.setOnLoadCallback(function () {
+      console.log('onload', this, arguments)
+      imageSearch = new google.search.ImageSearch();
+      imageSearch.setSearchCompleteCallback(this, function(){
+        console.log('complete', this, arguments);
+      }, null);
+      imageSearch.execute("Subaru STI");
+      google.search.Search.getBranding('branding');
+
+    });
+
+  </script>
+
+
   <%= csrf_meta_tags %>
   <%= yield :header %>
 </head>
@@ -26,41 +46,43 @@
 <% @page ||= 'none' %>
 <%= jqm_page @page do %>
   <div data-role="header">
+    <%= yield :back %>
     <%= image_tag 'traintrainlogo.png', {id: 'logo'} %>
   </div>
-
+<!--
   <div class="notice">
     <%= flash[:notice] %>
   </div>
   <div class="alert">
     <%= flash[:alert] %>
-  </div>
+  </div>-->
 
   <%= yield %>
 
   <div data-role="footer" class="ui-bar nopadding nofade" data-position="fixed" data-theme="a" id="root_footer">
     <%= nav_for @page do |n| %>
 
-      <a href="/">
-        <img src="/assets/icons/profile.png"/>
+      <% width = current_user ? '33%' : '50%' %>
+
+      <% if current_user %>
+        <a href="/me" style="width: <%= width -%>">
+          <img src="/assets/icons/profile-double.png"/>
+          <br/>Profile
+        </a>
+      <% else %>
+        <a href="/signin" style="width: <%= width -%>">
+          <img src="/assets/icons/profile.png"/>
+          <br/>Login
+        </a>
+      <% end %>
+      <a href="/" class="border-left" style="border-radius: 0px !important; width: <%= width == '33%' ? '34%' : width -%>">
+        <img src="/assets/icons/findalesson.png"/>
         <br/>Find a Lesson
       </a>
       <% if current_user %>
-
-        <a href="/post">
+        <a href="/post" class="border-left" style="border-radius: 0px !important; width: <%= width -%>">
           <img src="/assets/icons/postalesson.png"/>
           <br/>Post a Lesson
-        </a>
-        <a href="/me">
-          <img src="/assets/icons/profile.png"/>
-          <br/>Profile
-        </a>
-
-      <% else %>
-
-        <a href="/signin">
-          <img src="/assets/icons/profile.png"/>
-          <br/>Login
         </a>
       <% end %>
     <% end %>

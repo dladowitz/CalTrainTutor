@@ -1,16 +1,8 @@
 <li>
-  <a href="<%= lesson_path(lesson) %>">
+  <a href="<%= user_path(user) %>">
+    <%= image_tag user.image, {class: 'mug'} %>
 
-    <% if lesson.creator.image %>
-      <%= image_tag lesson.creator.image, {class: 'mug'} %>
-    <% end %>
-
-    <%= lesson.title %>
-    <br/><%= lesson.start %> <--> <%= lesson.end %> @ <%= lesson.time %>
-    <br/>Teacher: <%= lesson.creator.name %>
-    <% if lesson.student %>
-      <br/>Student: <%= lesson.student.name %>
-    <% end %>
+    <%= user.name %>
   </a>
 </li>
 
