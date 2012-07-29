@@ -10,6 +10,7 @@ CaltrainTutor::Application.routes.draw do
   get '/whoami' => 'users#whoami'
 
   get '/me' => 'users#me'
+  get '/info' => 'users#info'
   get '/post' => 'lessons#new'
 
   resources :lessons do

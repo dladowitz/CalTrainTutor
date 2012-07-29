@@ -25,4 +25,8 @@ class UsersController < ApplicationController
     render :show
   end
 
+  def info
+
+  end
+
 end
