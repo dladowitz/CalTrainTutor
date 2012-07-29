@@ -61,6 +61,19 @@ class User
       end
     end
   end
+  
+  def age
+    birthday = self.birthday
+    birthday_year = self.birthday.split('/').last.to_i
+    now = Time.now.utc.to_date
+    now.year - birthday_year - (Date.strptime(birthday, '%m/%d/%Y').change(:year => now.year) > now ? 1 : 0)
+  end
+  
+  def large_img
+    self.image.gsub('square', 'large')
+  end
+  
+  
 
   def purchase(lesson, payment_info)
     #if lesson.student.present?
