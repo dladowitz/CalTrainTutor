@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '1.9.3'
 gem 'rails', '3.2.7'
 
+
 gem "mongoid", "~> 3.0.0"
 
 gem 'omniauth'
@@ -23,7 +24,7 @@ end
 
 gem 'jquery-rails'
 #gem 'jqm_helper', '0.1.1', :path => 'vendor/gems/jqm_helper-0.1.1'
-gem 'jqm_helper', '0.1.1', :git => 'git@github.com:pehrlich/jqm_helper.git'
+gem 'jqm_helper', '0.1.1', :git => 'https://github.com/pehrlich/jqm_helper.git'
 
 
 # To use debugger
