@@ -12,6 +12,12 @@
  *= require_tree .
  */
 
+#name {
+	text-shadow: 1px 1px 1px white;
+	color: red;
+	background: url('/assets/subtitlebg.png') repeat-x !important;
+}
+
 .ui-header {
   background: url('/assets/headerbackground.png') repeat-x !important;
 }
