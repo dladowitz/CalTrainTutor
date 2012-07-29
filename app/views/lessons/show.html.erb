@@ -95,6 +95,10 @@
       Complete
     </a>
   <% end %>
+<% elsif current_user == @lesson.creator%>
+			<div class="waiting">
+				This class is still waiting for a student
+			</div>
 <% else %>
   <div class="tall_bg big_blue_button">
     <a data-role="button" href="<%= buy_lesson_path(@lesson) %>">
