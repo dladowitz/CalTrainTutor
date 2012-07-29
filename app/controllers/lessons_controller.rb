@@ -1,7 +1,9 @@
 class LessonsController < ApplicationController
 
   def index
-    @lessons = Lesson.all.to_a
+    lessons = Lesson.all.to_a.group_by {|l| l.northbound?}
+    @northbound = lessons[true]
+    @southbound = lessons[false]
   end
 
   def show

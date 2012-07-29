@@ -3,50 +3,54 @@
 <% end %>
 
 <div id=min_heighted>
-
-
   <% if @lesson.image_url %>
     <img id="main-image" src="<%= @lesson.image_url %>"/>
   <% end %>
 
   <h1><%= @lesson.title.titleize %></h1>
 
-
   <ul data-role="listview" data-theme="g">
-    <%= render partial: 'users/preview', locals: {user: @lesson.creator} %>
+    <%= render partial: 'users/preview', locals: {user: @lesson.creator, phrase: 'Teacher'} %>
+    <% if @lesson.student %>
+      <%= render partial: 'users/preview', locals: {user: @lesson.creator, phrase: 'Student'} %>
+    <% end %>
   </ul>
 
   <table cellpadding="0" cellmargin="0" cellspacing="0">
     <tr>
-      <td style="width: 44%;">
+      <td style="width: 50%;">
         <label>Leaving At</label>
       </td>
+      <td>
+        <span class="time">
+                <%= @lesson.time %>
+              </span>
+
+      </td>
+    </tr>
+    <tr>
       <td>
         <label>
           from
         </label>
       </td>
       <td>
-      <span class="info">
-        <%= @lesson.start.try :titleize %>
-      </span>
+        <span class="info">
+                <%= @lesson.start.try :titleize %>
+              </span>
       </td>
     </tr>
     <tr>
-      <td rowspan="2">
-      <span class="time">
-        <%= @lesson.time %>
-      </span>
-      </td>
       <td>
         <label>
           to
         </label>
       </td>
       <td>
-      <span class="info">
-        <%= @lesson.end.try :titleize %>
-      </span>
+        <span class="info">
+                <%= @lesson.end.try :titleize %>
+              </span>
+
       </td>
     </tr>
     <tr>
@@ -56,9 +60,9 @@
         </label>
       </td>
       <td>
-      <span class="info">
-        40min
-      </span>
+        <span class="info">
+                40min
+              </span>
       </td>
     </tr>
   </table>
@@ -78,10 +82,6 @@
     <a href="<%= buy_lesson_path(@lesson) %>">
       Complete
     </a>
-  <% else %>
-    <div style="text-align: center" class="tall_bg">
-      Purchased already by <%= @lesson.student.name %>
-    </div>
   <% end %>
 <% else %>
   <div class="tall_bg big_blue_button">

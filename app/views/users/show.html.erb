@@ -1,38 +1,32 @@
+<img id="profile_photo" src="<%= @user.large_img %>"/>
 
-<img id="profile_photo" src="<%= @user.large_img %>" /> <br />
-
-<div id="name">
-	<%= @user.name %>	
-	| Age | <%= @user.age %>
-</div>
-
+<table>
+  <tr>
+    <td><%= @user.name.titleize %></td>
+    <td><label>Age</label></td>
+    <td><%= @user.age %> years</td>
+  </tr>
+</table>
 
 <% content_for :back do %>
-  <%= link_to 'back', :back, {:"data-icon" => "arrow-l", :"data-iconpos" => 'left',  style: "margin-top: 7px !important;"} %>
+  <%= link_to 'back', :back, {:"data-icon" => "arrow-l", :"data-iconpos" => 'left', style: "margin-top: 7px !important;"} %>
 <% end %>
 
 
-
-<h2>Teaching Soon</h2>
 <% if @lessons_offered.present? %>
+  <h2>Teaching Soon</h2>
   <ul data-role="listview" data-theme="g">
     <% @lessons_offered.each do |lesson| %>
-			<%= render :partial => 'lessons/preview', :locals => {:lesson => lesson } %>
+      <%= render :partial => 'lessons/preview', :locals => {:lesson => lesson} %>
     <% end %>
   </ul>
-<% else %>
-  No lessons yet.
 <% end %>
 
-
-
-<h2>Taking Soon</h2>
 <% if @lessons_taking.present? %>
+  <h2>Taking Soon</h2>
   <ul data-role="listview" data-theme="g">
     <% @lessons_taking.each do |lesson| %>
-			<%= render :partial => 'lessons/preview', :locals => {:lesson => lesson } %>
+      <%= render :partial => 'lessons/preview', :locals => {:lesson => lesson} %>
     <% end %>
   </ul>
-<% else %>
-  No lessons yet.
 <% end %>

@@ -3,7 +3,10 @@
     <%= image_tag user.image, {class: 'mug'} %>
 
     <div class="blue-text">
-      <%= user.name.titleize %>
+      <% if phrase %>
+        <%= phrase %>:
+      <% end %>
+      <%= user.name_short %>
     </div>
   </a>
 </li>

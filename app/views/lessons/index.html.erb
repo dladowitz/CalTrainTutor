@@ -1,15 +1,20 @@
 <% @page = :discovery %>
 
-<h2>Showing lessons</h2>
-
-<% if @lessons.present? %>
+<% if @northbound.present? %>
+  <h2>Northbound Lessons</h2>
   <ul data-role="listview" data-theme="g">
-    <% @lessons.each do |lesson| %>
+    <% @northbound.each do |lesson| %>
       <%= render :partial => '/lessons/preview', locals: {lesson: lesson} %>
     <% end %>
   </ul>
-<% else %>
-  No lessons yet.
 <% end %>
 
 
+<% if @southbound.present? %>
+  <h2>Southbound Lessons</h2>
+  <ul data-role="listview" data-theme="g">
+    <% @southbound.each do |lesson| %>
+      <%= render :partial => '/lessons/preview', locals: {lesson: lesson} %>
+    <% end %>
+  </ul>
+<% end %>

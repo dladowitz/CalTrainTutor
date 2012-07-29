@@ -48,6 +48,7 @@ img#profile_photo {
 
   img{
     clip: rect(0px,50px,50px,0px);
+    margin-left: -1px;
   }
 }
 
@@ -74,6 +75,7 @@ img.mug {
 
 table {
   border-collapse: collapse;
+  white-space: nowrap;
   width: 100%;
   color: #295796;
   font-weight: bold;
@@ -87,7 +89,7 @@ table {
     color: #898989;
   }
   td {
-    padding: 5px 11px;
+    padding: 6px 11px;
     border: 1px solid #aaa;
   }
 }

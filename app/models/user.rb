@@ -2,7 +2,6 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
 
-
   # created
   has_many :lessons_offered, class_name: 'Lesson', inverse_of: :creator
   has_many :lessons_received, class_name: 'Lesson', inverse_of: :student
@@ -63,6 +62,7 @@ class User
   end
   
   def age
+    return nil unless self.birthday
     birthday = self.birthday
     birthday_year = self.birthday.split('/').last.to_i
     now = Time.now.utc.to_date
@@ -71,6 +71,18 @@ class User
   
   def large_img
     self.image.gsub('square', 'large')
+  end
+
+  def first_name
+    self.name.split(' ').first
+  end
+
+  def last_name
+    self.name.split(' ').last
+  end
+
+  def name_short
+    "#{first_name} #{last_name[0]}."
   end
   
   

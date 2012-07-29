@@ -11,6 +11,7 @@ class Lesson
   field :end, type: String
   field :time, type: String
   field :image_url, type: String
+  field :date
 
   field :payment, type: Hash, default: {}
 
@@ -44,6 +45,11 @@ class Lesson
 
   def booked?
     self.student.present?
+  end
+
+  def northbound?
+    return nil unless self.start && self.end && Lesson::STATIONS.index(self.start) && Lesson::STATIONS.index(self.end)
+    Lesson::STATIONS.index(self.start) > Lesson::STATIONS.index(self.end)
   end
 
 
