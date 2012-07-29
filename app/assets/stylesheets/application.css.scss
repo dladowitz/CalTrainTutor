@@ -39,6 +39,7 @@ h1, h2 {
   background: url('/assets/subtitlebg.png') repeat-x !important;
   color: #707070;
   text-shadow: 1px 1px 1px white;
+  margin: 0;
 }
 
 img.mug {
@@ -101,4 +102,13 @@ table {
 
 .ui-icon-findalesson {
 	background-image: url("icons/findalesson.png") !important;
+}
+
+.border-left{
+  border-left: 1px solid white;
+  border-color: rgba(255, 255, 255, .3)
+}
+
+form{
+  padding: 20px;
 }

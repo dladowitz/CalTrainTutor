@@ -37,5 +37,9 @@ class Lesson
     self.payment[:cardexpirymonth]
   end
 
+  def image
+    self.creator.image
+  end
+
 
 end

@@ -1,10 +1,13 @@
+<% content_for :back do %>
+  <a href="/" data-icon="arrow-l" data-iconpos='left'>Back</a>
+<% end %>
+
 <h1><%= @lesson.title %></h1>
 
-<%#= render parial: 'users/preview', locals: {user: @lesson.creator} %>
+<ul data-role="listview" data-theme="g">
+  <%= render partial: 'users/preview', locals: {user: @lesson.creator} %>
+</ul>
 
-<div class="col">
-
-</div>
 <table>
   <tr>
     <td>
@@ -62,7 +65,7 @@
     Purchased already by <%= @lesson.student.name %>
   <% end %>
 <% else %>
-  <a  class="big_blue_button" data-role="button" href="<%= buy_lesson_path(@lesson) %>">
-    Sign Up!
+  <a class="big_blue_button" data-role="button" href="<%= buy_lesson_path(@lesson) %>">
+    Book for $25
   </a>
 <% end %>

@@ -19,6 +19,8 @@ CaltrainTutor::Application.routes.draw do
     end
   end
 
+  resources :users
+
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
