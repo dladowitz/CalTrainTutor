@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:pehrlich/jqm_helper.git
+  remote: https://github.com/pehrlich/jqm_helper.git
   revision: fc246f31045015e0dd9537939f5300c8bf522513
   specs:
     jqm_helper (0.1.1)
