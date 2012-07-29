@@ -6,10 +6,9 @@ window.set_image = ->
     return false;
 
   url = image_results[current_index].url
-#  console.log url;
-#  $('#main-image').attr('src', url).addClass('open')
-#  $('#lesson_image_url').attr('value', url)
 
+  unless url
+    return false
 
   $('#image_hud').html('Loading')
 
@@ -19,7 +18,7 @@ window.set_image = ->
       $('#image_hud').html('').append(this);
       $(this).fadeIn();
   ).error( () ->
-      alert('Failed. Try another.')
+      $('#image_hud').html('Failed. Try another.')
   ).attr({src: url, id: 'main-image'});
 
   current_index++;
@@ -54,3 +53,7 @@ $(document).on 'click',  '#main-image', ()->
 
 #$("#new_lesson").validate();
 
+
+
+$(document).on 'focus', '.overlabel input', (e)->
+  $(e.currentTarget).closest('.overlabel').find('label').hide()

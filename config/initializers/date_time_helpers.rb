@@ -3,6 +3,7 @@ Time::DATE_FORMATS.merge!(
     :date_time12 => "%m/%d/%Y %I:%M%p",
     :month_day_at_time => "%B %d at %I:%M%p",
     :month_day => "%B %d", # October 17
+    :month_day2 => "%B %e", # October 17
     :mnth_day => "%b %d", # October 17
     :month_year => "%B %Y", # October 2010,
     :month_day_year => "%B %d, %Y", # October 12, 2010

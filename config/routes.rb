@@ -13,6 +13,8 @@ CaltrainTutor::Application.routes.draw do
   get '/info' => 'users#info'
   get '/post' => 'lessons#new'
 
+  get '/launch' => redirect("/")
+
   resources :lessons do
     member do
       get '/buy' => 'lessons#new_purchase'

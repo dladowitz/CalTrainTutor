@@ -27,7 +27,7 @@ img#profile_photo {
 
 .waiting{
   color: #6b6b6b;
-  font-size: 17px;
+  font-size: 16px;
   margin-left: 13px;
   margin-top: 16px;
   margin-bottom: 16px;
@@ -184,8 +184,11 @@ form {
   display: block;
   max-width: 100%;
 }
+.min_heighted2 {
+  min-height: 152px;
+}
 
-#min_heighted {
+#min_heighted, {
   min-height: 232px;
 }
 
@@ -222,4 +225,14 @@ img.icon{
 }
 .centered{
   text-align: center;
+}
+
+
+.positioned{
+  position: relative;
+}
+.overlabel label{
+  position: absolute;
+  color: #999;
+  padding: 8px;
 }

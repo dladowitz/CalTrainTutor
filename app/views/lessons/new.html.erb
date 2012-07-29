@@ -4,10 +4,16 @@
     <%= f.text_field :title, {placeholder: 'Type of Lesson', required: true} %>
     <span id="image_hud"></span>
     <!--<img src="" class="hidden" id="main-image"/>-->
-    <%= f.select(:start, Lesson::STATIONS,  {:prompt => 'Departure Station'}) %>
+    <%= f.select(:start, Lesson::STATIONS, {:prompt => 'Departure Station'}) %>
     <%= f.select(:end, Lesson::STATIONS, {:prompt => 'Arrival Station'}) %>
-    <%= f.text_field :date, {placeholder: 'Departure Date', required: true, type: 'date'} %>
-    <%= f.text_field :time, {placeholder: 'Departure Time', required: true, type: 'time'} %>
+    <div class="positioned overlabel">
+      <label>Departure Date</label>
+      <%= f.text_field :date, {required: true, type: 'date'} %>
+    </div>
+    <div class="positioned overlabel">
+      <label>Departure Time</label>
+      <%= f.text_field :time, {required: true, type: 'time'} %>
+    </div>
   </div>
   <div class="big_blue_button tall_bg pop_out">
     <%= f.submit 'Post a Lesson', {class: 'big_blue_button'} %>

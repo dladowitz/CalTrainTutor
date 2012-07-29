@@ -68,11 +68,14 @@
 
 <%= form_for(@lesson, {url: buy_lesson_path(@lesson), html:
     {id: 'payment-form', :'data-ajax' => "false"}}) do |f| %>
-  <div class="padded_top">
+  <div class="padded_top min_heighted2">
     <div class="payment-errors"></div>
     <%= f.text_field :'cardnumber', {class: "card-number", placeholder: 'Card Number', required: true} %>
     <%= f.text_field :'cardcvc', {class: "card-cvc", placeholder: 'CVC', required: true} %>
-    <%= f.text_field :'cardexpiry', {class: "card-expiry", placeholder: 'Expires', type: 'month', required: true} %>
+    <div class="positioned overlabel">
+      <label>Expiration</label>
+      <%= f.text_field :'cardexpiry', {class: "card-expiry", type: 'month', required: true} %>
+    </div>
   </div>
   <div class="big_blue_button tall_bg pop_out">
     <%= submit_tag 'Book for $25' %>
