@@ -2,7 +2,8 @@
   <div class="min_height padded_top">
     <%= f.hidden_field :image_url %>
     <%= f.text_field :title, {placeholder: 'Type of Lesson', required: true} %>
-    <img src="" class="hidden" id="main-image"/>
+    <span id="image_hud"></span>
+    <!--<img src="" class="hidden" id="main-image"/>-->
     <%= f.select(:start, Lesson::STATIONS,  {:prompt => 'Departure Station'}) %>
     <%= f.select(:end, Lesson::STATIONS, {:prompt => 'Arrival Station'}) %>
     <%= f.text_field :date, {placeholder: 'Departure Date', required: true, type: 'date'} %>

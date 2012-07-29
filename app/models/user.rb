@@ -54,7 +54,6 @@ class User
         user.locale = auth['extra']['raw_info']['locale'] || "" 
         user.updated_time = auth['extra']['raw_info']['updated_time'] || "" 
         user.birthday = auth['extra']['raw_info']['birthday'] || ""
-        logger.warn "SAVING IMAGE #{auth['info']['image']} -- #{user.image}"
       end
     end
   end

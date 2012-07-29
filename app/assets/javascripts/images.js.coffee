@@ -7,8 +7,20 @@ window.set_image = ->
 
   url = image_results[current_index].url
 #  console.log url;
-  $('#main-image').attr('src', url).addClass('open')
-  $('#lesson_image_url').attr('value', url)
+#  $('#main-image').attr('src', url).addClass('open')
+#  $('#lesson_image_url').attr('value', url)
+
+
+  $('#image_hud').html('Loading')
+
+  $(new Image()).load(() ->
+#      $(this).css({display: 'none', id: 'main-image'}) # .hide() doesn't work in Safari when the element isn't on the DOM already
+#      $(this).hide();
+      $('#image_hud').html('').append(this);
+      $(this).fadeIn();
+  ).error( () ->
+      alert('Failed. Try another.')
+  ).attr({src: url, id: 'main-image'});
 
   current_index++;
 
@@ -30,6 +42,7 @@ window.get_images = ->
 
 $(document).on 'change', '#lesson_title', ()->
 #  console.log 'change', this, arguments
+  image_results = null;
   get_images();
   false
 
