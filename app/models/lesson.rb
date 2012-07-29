@@ -9,11 +9,12 @@ class Lesson
   field :title, type: String
   field :start, type: String
   field :end, type: String
-  field :time, type: String
+  field :time, type: DateTime
   field :image_url, type: String
-  field :date
 
   field :payment, type: Hash, default: {}
+
+  validates_presence_of :title, :start, :end, :time
 
   alias_method :name, :title
 
@@ -56,5 +57,8 @@ class Lesson
     nil
   end
 
+  def date
+    time
+  end
 
 end

@@ -1,5 +1,12 @@
 <% @page = :discovery %>
 
+<% content_for :forward do %>
+  <a href="../nav.html" data-icon="info" data-iconpos="notext" data-rel="dialog"
+     class="ui-btn-right" style="margin-top: 7px !important;"
+     title="Search">&nbsp;
+  </a>
+<% end %>
+
 <% if @northbound.present? %>
   <h2>Northbound Lessons</h2>
   <ul data-role="listview" data-theme="g">

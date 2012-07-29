@@ -9,6 +9,15 @@ class UsersController < ApplicationController
     load_by_id
   end
 
+  def whoami
+    if current_user
+      render json: {user: current_user.inspect.gsub(/"/, "'")}
+    else
+      render text: 'logged out'
+
+    end
+  end
+
   def me
     @user = current_user
     @lessons_offered = @user.lessons_offered

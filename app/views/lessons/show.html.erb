@@ -23,9 +23,9 @@
       </td>
       <td>
         <span class="time">
-          <%= @lesson.time %>
+          <%= @lesson.time.to_s(:time_only) %>
+          <%#= @lesson.time.to_s %>
         </span>
-
       </td>
     </tr>
     <tr>
@@ -65,20 +65,18 @@
         </span>
       </td>
     </tr>
-    <% if @lesson.date %>
-      <tr>
-        <td>
-          <label>
-            day
-          </label>
-        </td>
-        <td>
+    <tr>
+      <td>
+        <label>
+          day
+        </label>
+      </td>
+      <td>
           <span class="info">
-            <%= eta(@lesson.date) %>
+            <%= eta(@lesson.time) %>
           </span>
-        </td>
-      </tr>
-    <% end %>
+      </td>
+    </tr>
   </table>
 
   <% if @lesson.booked? && [@lesson.creator, @lesson.student].include?(current_user) %>

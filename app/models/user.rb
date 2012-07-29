@@ -70,7 +70,7 @@ class User
   end
   
   def large_img
-    self.image.gsub('square', 'large')
+    self.image.try :gsub, 'square', 'large'
   end
 
   def first_name

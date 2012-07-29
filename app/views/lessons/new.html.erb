@@ -3,9 +3,10 @@
     <%= f.hidden_field :image_url %>
     <%= f.text_field :title, {placeholder: 'Type of Lesson', required: true} %>
     <img src="" class="hidden" id="main-image"/>
-    <%= f.select(:start, ['Departure Station'] + Lesson::STATIONS) %>
-    <%= f.select(:end, ['Arrival Station'] + Lesson::STATIONS) %>
-    <%= f.text_field :date, {placeholder: 'Time Departing', required: true, type: 'date'} %>
+    <%= f.select(:start, Lesson::STATIONS,  {:prompt => 'Departure Station'}) %>
+    <%= f.select(:end, Lesson::STATIONS, {:prompt => 'Arrival Station'}) %>
+    <%= f.text_field :date, {placeholder: 'Departure Date', required: true, type: 'date'} %>
+    <%= f.text_field :time, {placeholder: 'Departure Time', required: true, type: 'time'} %>
   </div>
   <div class="big_blue_button tall_bg pop_out">
     <%= f.submit 'Post a Lesson', {class: 'big_blue_button'} %>

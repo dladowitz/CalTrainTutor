@@ -8,6 +8,6 @@ Time::DATE_FORMATS.merge!(
     :month_day_year => "%B %d, %Y", # October 12, 2010
     :pretty => "%a, %b %e at %l:%M%P", # Mon, Oct 4 at 7:00pm
     :full => "%a, %B %e, %l:%M%P", # Mon, October 4 at 7:00pm
-    :time_only => "%l:%M%P", # 7:00pm
+    :time_only => "%l:%M %P", # 7:00pm
     :quick => "%b %e, %l:%M%p" # Oct 4, 7:00pm
 )

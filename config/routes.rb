@@ -7,6 +7,7 @@ CaltrainTutor::Application.routes.draw do
   get '/signout' => 'sessions#destroy', :as => :signout
   get '/signin' => 'sessions#new', :as => :signin
   get '/session' => 'users#show_session'
+  get '/whoami' => 'users#whoami'
 
   get '/me' => 'users#me'
   get '/post' => 'lessons#new'

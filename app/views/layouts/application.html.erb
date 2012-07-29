@@ -3,6 +3,7 @@
 <head>
   <title>CaltrainTutor</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <%= stylesheet_link_tag "application", :media => "all" %>
   <script type="text/javascript">
     if (!window['console'] || !window.console['log']) {
@@ -44,6 +45,7 @@
   <div data-role="header">
     <%= yield :back %>
     <%= image_tag 'traintrainlogo.png', {id: 'logo'} %>
+    <%= yield :forward %>
   </div>
 <!--
   <div class="notice">

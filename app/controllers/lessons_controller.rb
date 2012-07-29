@@ -15,8 +15,13 @@ class LessonsController < ApplicationController
   end
 
   def create
-    if date = params[:lesson][:date]
-      params[:lesson][:date] = Date.strptime(date, '%b %d, %Y') # 'Jul 29, 2012', '%b %d, %Y'
+    date = params[:lesson].delete(:date)
+    time = params[:lesson].delete(:time)
+    if ( date && time )
+      logger.warn "setting time #{Time.parse("#{date} #{time}")}"
+      params[:lesson][:time] = Time.parse("#{date} #{time}")
+    else
+      logger.warn "not setting time #{date},  #{time}"
     end
     @lesson = Lesson.new(params[:lesson])
     @lesson.creator = current_user
