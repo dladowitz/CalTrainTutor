@@ -29,9 +29,12 @@ class User
   field :timezone, type: Integer
   field :locale, type: String
   field :updated_time, type: String
+  field :birthday
 
 
   def self.create_with_omniauth(auth)
+    logger.warn "Here is the log: #{auth}"
+    
     create! do |user|
       user.provider = auth['provider']
       user.uid = auth['uid']
@@ -53,6 +56,7 @@ class User
         user.username = auth['extra']['raw_info']['username'] || "" 
         user.locale = auth['extra']['raw_info']['locale'] || "" 
         user.updated_time = auth['extra']['raw_info']['updated_time'] || "" 
+        user.birthday = auth['extra']['raw_info']['birthday'] || "" 
         
       end
     end
