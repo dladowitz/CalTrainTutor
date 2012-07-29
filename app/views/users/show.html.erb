@@ -1,6 +1,7 @@
 <h1>Showing User</h1>
 <!-- <%= @user.to_yaml %> -->
 <%= @user.name %>
+<%= @user.birthday %>
 <img src="<%= @user.image %>" />
 
 <h2>Teaching Soon</h2>
@@ -15,6 +16,8 @@
 <% else %>
   No lessons yet.
 <% end %>
+
+
 
 <h2>Taking Soon</h2>
 <% if @lessons_taking.present? %>
