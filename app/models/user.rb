@@ -32,7 +32,8 @@ class User
 
 
   def self.create_with_omniauth(auth)
-    logger.warn "Here is the log: #{auth}"
+    raise auth.inspect
+    #logger.warn "Here is the log: #{auth}"
     
     create! do |user|
       user.provider = auth['provider']
@@ -56,7 +57,6 @@ class User
         user.locale = auth['extra']['raw_info']['locale'] || "" 
         user.updated_time = auth['extra']['raw_info']['updated_time'] || "" 
         user.birthday = auth['extra']['raw_info']['birthday'] || "" 
-        
       end
     end
   end

@@ -199,6 +199,14 @@ form {
   padding: 20px 0;
 }
 
+.padded_side{
+  padding: 0px 20px;
+  h2{
+    margin: 0 -20px;
+    padding: 0 20px;
+  }
+}
+
 .pop_out {
   margin: 0 -20px;
 }
@@ -208,3 +216,10 @@ form {
 
 }
 
+
+img.icon{
+  width: 72px;
+}
+.centered{
+  text-align: center;
+}
