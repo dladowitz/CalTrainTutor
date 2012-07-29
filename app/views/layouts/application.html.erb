@@ -62,23 +62,25 @@
   <div data-role="footer" class="ui-bar nopadding nofade" data-position="fixed" data-theme="a" id="root_footer">
     <%= nav_for @page do |n| %>
 
+      <% width = current_user ? '33%' : '50%' %>
+
       <% if current_user %>
-        <a href="/me">
-          <img src="/assets/icons/profile.png"/>
+        <a href="/me" style="width: <%= width -%>">
+          <img src="/assets/icons/profile-double.png"/>
           <br/>Profile
         </a>
       <% else %>
-        <a href="/signin">
+        <a href="/signin" style="width: <%= width -%>">
           <img src="/assets/icons/profile.png"/>
           <br/>Login
         </a>
       <% end %>
-      <a href="/" class="border-left">
+      <a href="/" class="border-left" style="border-radius: 0px !important; width: <%= width == '33%' ? '34%' : width -%>">
         <img src="/assets/icons/findalesson.png"/>
         <br/>Find a Lesson
       </a>
       <% if current_user %>
-        <a href="/post" class="border-left" w>
+        <a href="/post" class="border-left" style="border-radius: 0px !important; width: <%= width -%>">
           <img src="/assets/icons/postalesson.png"/>
           <br/>Post a Lesson
         </a>
