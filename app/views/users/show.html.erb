@@ -1,26 +1,10 @@
 
-
-<!-- <%= @user.to_yaml %> -->
-
-
-
-	<% new_image = @user.image %>
-	<% new_image["square"] = "large"%>
-
-
-<img id="profile_photo" src="<%= new_image %>" /> <br />
-
-
-
+<img id="profile_photo" src="<%= @user.large_img %>" /> <br />
 
 <div id="name">
 	<%= @user.name %>	
 	| Age | <%= @user.age %>
 </div>
-
-
-
-
 
 
 <% content_for :back do %>

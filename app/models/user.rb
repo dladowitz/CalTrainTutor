@@ -69,6 +69,11 @@ class User
     now.year - birthday_year - (Date.strptime(birthday, '%m/%d/%Y').change(:year => now.year) > now ? 1 : 0)
   end
   
+  def large_img
+    self.image.gsub('square', 'large')
+  end
+  
+  
 
   def purchase(lesson, payment_info)
     #if lesson.student.present?
